@@ -26,20 +26,20 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <form>
+          <form [formGroup]="noteForm">
             <div class="mb-3">
               <label for="addNoteTitle" class="col-form-label">Note Title :</label>
-              <input type="text" class="form-control" id="addNoteTitle">
+              <input type="text" class="form-control" id="addNoteTitle" formControlName="title">
             </div>
             <div class="mb-3">
               <label for="addNoteDescription" class="col-form-label">Note Description:</label>
-              <textarea class="form-control" id="addNoteDescription"></textarea>
+              <textarea class="form-control" id="addNoteDescription" formControlName="description"></textarea>
             </div>
           </form>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Add New Note</button>
+          <button type="button" class="btn btn-customized" (click)="addNote()" [disabled]="noteForm.invalid">Add New Note</button>
         </div>
       </div>
     </div>
@@ -67,7 +67,7 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Update Note</button>
+          <button type="button" class="btn btn-customized">Update Note</button>
         </div>
       </div>
     </div>
