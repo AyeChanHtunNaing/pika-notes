@@ -1,0 +1,76 @@
+<div class="container">
+  <h3 class="text-center"> Pika Notes  <img src="assets/images/pikachu.png" class="mx-2"> </h3>
+  <button type="button" class="btn btn-customized" data-bs-toggle="modal" data-bs-target="#addNoteModal">Create Note <i class="bi bi-plus-square"></i></button>
+  <div class="row mt-2">
+    <div class="col-md-4">
+      <div class="card card-body">
+        <h5>BBC</h5>
+        <p class="text-muted">BBC is ZYMO. He likes girls and gays blah blah blah ........ </p>
+        <div class="d-flex align-items-center">
+          <span class="mx-3">
+             <i class="bi bi-pen" data-bs-toggle="modal" data-bs-target="#addNoteModal"></i>
+          </span>
+          <span class="mx-3">
+          <i class="bi bi-trash"></i>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- add note modal start -->
+  <div class="modal fade" id="addNoteModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="addNoteModalLabel">Add Notes</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="mb-3">
+              <label for="addNoteTitle" class="col-form-label">Note Title :</label>
+              <input type="text" class="form-control" id="addNoteTitle">
+            </div>
+            <div class="mb-3">
+              <label for="addNoteDescription" class="col-form-label">Note Description:</label>
+              <textarea class="form-control" id="addNoteDescription"></textarea>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Add New Note</button>
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- add note modal end -->
+  <!-- edit note modal start -->
+  <div class="modal fade" id="editNoteModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="editNoteModalLabel">Edit Notes</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="mb-3">
+              <label for="editNoteTitle" class="col-form-label">Note Title :</label>
+              <input type="text" class="form-control" id="editNoteTitle">
+            </div>
+            <div class="mb-3">
+              <label for="editNoteDescription" class="col-form-label">Note Description:</label>
+              <textarea class="form-control" id="editNoteDescription"></textarea>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Update Note</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- edit modal end -->
+</div>

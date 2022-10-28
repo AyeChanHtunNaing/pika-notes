@@ -1,1 +1,32 @@
 /* You can add global styles to this file, and also import other style files */
+body{
+  background: #edf1f5;
+  margin-top:20px;
+}
+.card{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  border: 0 solid transparent;
+  border-radius: 1em;
+  margin-bottom: 30px;
+}
+.card-body{
+  flex: 1 1 auto;
+  padding: 1.5rem;
+}
+.btn-customized{
+  background-color: #7AB2DA;
+  color:white;
+}
+.btn-customized:hover{
+  background-color: #7AB2DA;
+  color:black;
+}
+.theme-color{
+  color:#FEB370;
+}
+
