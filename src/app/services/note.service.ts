@@ -23,12 +23,12 @@ export class NoteService {
   }
   //delete note from database
   deleteNote(note:Note){
-    let docRef=doc(collection(this.fs,`Notes/${note.id}`));
+    let docRef=doc(this.fs,`Notes/${note.id}`);
     return deleteDoc(docRef)
   }
   //update note to database
   updateNote(note:Note,notes:any){
-    let docRef=doc(collection(this.fs,`Notes/${note.id}`));
+    let docRef=doc(this.fs,`Notes/${note.id}`);
     return updateDoc(docRef,notes)
   }
 }

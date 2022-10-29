@@ -1,17 +1,23 @@
+<ngx-spinner size="medium"
+             color="#fff"
+             type="ball-scale-multiple" [fullScreen]="true">
+  <p style="font-size: 20px; color: white">Loading...</p>
+</ngx-spinner>
+
 <div class="container">
   <h3 class="text-center"> Pika Notes  <img src="assets/images/pikachu.png" class="mx-2"> </h3>
   <button type="button" class="btn btn-customized" data-bs-toggle="modal" data-bs-target="#addNoteModal">Create Note <i class="bi bi-plus-square"></i></button>
   <div class="row mt-2">
-    <div class="col-md-4">
-      <div class="card card-body">
-        <h5>BBC</h5>
-        <p class="text-muted">BBC is ZYMO. He likes girls and gays blah blah blah ........ </p>
+    <div class="col-md-4" *ngFor="let note of notesData">
+      <div class="card card-body" style="height:80% !important">
+        <h5>{{note.note_title}}</h5>
+        <p class="text-muted">{{note.note_desc}}</p>
         <div class="d-flex align-items-center">
           <span class="mx-3">
-             <i class="bi bi-pen" data-bs-toggle="modal" data-bs-target="#addNoteModal"></i>
+             <i class="bi bi-pen" data-bs-toggle="modal" data-bs-target="#editNoteModal" (click)="getAllDetails(note)"></i>
           </span>
           <span class="mx-3">
-          <i class="bi bi-trash"></i>
+          <i class="bi bi-trash" (click)="deleteNote(note)"></i>
           </span>
         </div>
       </div>
@@ -54,20 +60,20 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <form>
+          <form [formGroup]="editForm">
             <div class="mb-3">
               <label for="editNoteTitle" class="col-form-label">Note Title :</label>
-              <input type="text" class="form-control" id="editNoteTitle">
+              <input type="text" class="form-control" id="editNoteTitle" formControlName="edit_title" [value]="noteDetails?.note_title">
             </div>
             <div class="mb-3">
               <label for="editNoteDescription" class="col-form-label">Note Description:</label>
-              <textarea class="form-control" id="editNoteDescription"></textarea>
+              <textarea class="form-control" id="editNoteDescription" formControlName="edit_description" [value]="noteDetails?.note_desc"></textarea>
             </div>
           </form>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-customized">Update Note</button>
+          <button type="button" class="btn btn-customized" (click)="updateNote(noteDetails)">Update Note</button>
         </div>
       </div>
     </div>
